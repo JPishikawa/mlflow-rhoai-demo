@@ -7,7 +7,7 @@ from functools import cache
 from typing import Any
 
 from langchain_core.messages import AIMessage
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import create_react_agent
 
 from mlflow_notes_agent.config import get_settings
@@ -118,10 +118,11 @@ def _normalize_last_ai_message(state: dict[str, Any]) -> dict[str, list[AIMessag
 def build_agent():
     configure_mlflow()
     settings = get_settings()
-    model = ChatGoogleGenerativeAI(
-        model=settings.gemini_model,
-        temperature=0.2,
-        google_api_key=settings.google_api_key,
+    model = ChatOpenAI(
+        model=settings.vllm_model, 
+        openai_api_base=settings.vllm_api_base,
+        openai_api_key=settings.vllm_api_key, 
+        temperature=0.2
     )
     return create_react_agent(
         model=model,

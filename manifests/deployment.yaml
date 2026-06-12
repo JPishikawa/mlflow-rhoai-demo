@@ -18,7 +18,7 @@ spec:
       serviceAccountName: mlflow-notes-agent
       containers:
         - name: backend
-          image: quay.io/mprahl/mlflow-rhoai-demo:latest
+          image: quay.io/jishikaw/mlflow-rhoai-demo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 2024
@@ -44,7 +44,7 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 20
         - name: ui
-          image: quay.io/mprahl/mlflow-rhoai-demo:latest
+          image: quay.io/jishikaw/mlflow-rhoai-demo:latest
           imagePullPolicy: Always
           command:
             - node

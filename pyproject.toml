@@ -14,7 +14,7 @@ dependencies = [
     "httpx",
     "kubernetes",
     "langchain",
-    "langchain-google-genai",
+    "langchain-openai",
     "langgraph-cli[inmem]",
     "langgraph",
     "litellm",
