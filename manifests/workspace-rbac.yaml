@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: mlflow-notes-agent-experiments-writer
-  namespace: mlflow-demo
+  namespace: mlflow-demo-agent
 rules:
   - apiGroups: ["mlflow.kubeflow.org"]
     resources: ["experiments"]
@@ -16,7 +16,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: mlflow-notes-agent-experiments-writer
-  namespace: mlflow-demo
+  namespace: mlflow-demo-agent
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
