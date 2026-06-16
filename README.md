@@ -40,7 +40,9 @@ cp .env.example .env
 
 Required backend values:
 
-- `GOOGLE_API_KEY` or `GEMINI_API_KEY`
+- `VLLM_API_KEY`
+- `VLLM_BASE_URL`
+- `VLLM_MODEL`
 - `GITHUB_TOKEN`
 - `GITHUB_REPO`
 - `GITHUB_BRANCH`
@@ -48,8 +50,6 @@ Required backend values:
 - `MLFLOW_TRACKING_AUTH`
 - `MLFLOW_WORKSPACE`
 
-If only one Gemini key env var is set, the backend aliases it to the other name at
-startup so both the app and MLflow judges can use the same credential.
 
 The `GITHUB_BRANCH` branch should already exist in the target repository.
 For this demo, an empty `notes` branch works well.
