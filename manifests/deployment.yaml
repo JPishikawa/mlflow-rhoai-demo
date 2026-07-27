@@ -27,8 +27,6 @@ spec:
             - secretRef:
                 name: mlflow-notes-agent-env
           env:
-            - name: MLFLOW_TRACKING_URI
-              value: https://mlflow.redhat-ods-applications.svc:8443
             - name: REQUESTS_CA_BUNDLE
               value: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
           readinessProbe:
